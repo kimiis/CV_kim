@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/home.css">
+    <script src="js/home.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+
+
+    <title>Home</title>
+
+</head>
+<body>
+<nav class="menu">
+    <input class="menu-toggler" id="menu-toggler" type="checkbox">
+    <label for="menu-toggler"></label>
+    <ul>
+        <li class="menu-item">
+            <a class="picto-menu" href="#portfolio" aria-label="Portfolio"><img src="assets/menu/photo.png"></a>
+        </li>
+        <li class="menu-item">
+            <a class="picto-menu" href="#skills" aria-label="Skills"><img src="assets/skills/skill.png"> </a></li>
+        <li class="menu-item"><a class="picto-menu" href="game.html" aria-label="Game"><img
+                src="assets/menu/une-manette.png"></a></li>
+        <li class="menu-item"><a class="picto-menu" href="https://github.com/kimiis" aria-label="Github"><img
+                src="assets/menu/github.png"></a>
+        </li>
+        <li class="menu-item"><a class="picto-menu" href="#aboutme" aria-label="Profil"><img
+                src="assets/menu/profil.png"></a></li>
+        <li class="menu-item"><a class="picto-menu" href="https://www.linkedin.com/in/isabelle-kim-6ab129235/" aria-label="Linkedin"><img
+                src="assets/menu/linkedin.png"></a></li>
+        <li class="menu-item"><a class="picto-menu" href="#contact" aria-label="Contact"><img
+                src="assets/menu/lettre.png"></a></li>
+    </ul>
+</nav>
+<div class="home">
+
+    <div class="homeImage">
+        <img class="photoHome" src="assets/fond1home.png" alt="picture of me remixed by ai">
+    </div>
+
+    <div class="intro">
+        <p class="helloWorld">Hello world!</p>
+
+        <p class="text_intro">Welcome to a fantasy world go and check what is going here </p>
+
+    </div>
+
+    <div class="card1"></div>
+    <img class="photo1" src="assets/logo2.png" alt="picture of me remixed by ai">
+</div>
+
+<!-- Contenu de la section Skills -->
+<div id="skills">
+
+    <img class="photoSkills2" src="assets/skills/fondskillsVierge.png" alt="picture of me remixed by ai">
+    <img class="photoSkills" src="assets/skills/fondskills.png" alt="picture of me remixed by ai">
+
+    <div class="card2">
+
+
+        <div id="image-track" data-mouse-down-at="0" data-prev-percentage="-50">
+            <div class="frame">
+                <span class="header">Javascript</span>
+                <img class="image" src="assets/skills/skill1.png" draggable="false"/>
+
+            </div>
+            <div class="frame">
+                <span class="header">Java</span>
+                <img class="image" src="assets/skills/skill2.png" draggable="false"/>
+
+            </div>
+            <div class="frame">
+                <span class="header">SQL</span>
+                <img class="image" src="assets/skills/skill3.png" draggable="false"/>
+
+            </div>
+            <div class="frame">
+                <span class="header">PHP</span>
+                <img class="image" src="assets/skills/skill4.png" draggable="false"/>
+
+            </div>
+            <div class="frame">
+                <span class="header">SpringBoot</span>
+                <img class="image" src="assets/skills/skill5.png" draggable="false"/>
+
+            </div>
+            <div class="frame">
+                <span class="header">Symfony</span>
+                <img class="image" src="assets/skills/skill6.png" draggable="false"/>
+
+            </div>
+            <div class="frame">
+                <span class="header">Angular</span>
+                <img class="image" src="assets/skills/skill7.png" draggable="false"/>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="allTextSkills">
+        <p class="textSkills">choose your class</p>
+    </div>
+
+</div>
+
+<div id="portfolio">
+    <!-- Contenu de la section Portfolio -->
+    <div id="carouselExampleCaptions" class="carousel slide">
+
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
+        </div>
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <div class="carousel-text">
+                    <p>An open-world featuring diverse maps</p>
+                </div>
+
+                <img src="assets/portfolio/fondsPortfolio1.png" class="d-block w-100" alt="...">
+
+            </div>
+
+            <div class="carousel-item">
+                <div class="carousel-text">
+                    <p> Unimemory</p>
+                </div>
+                <div class="link"><a href="https://github.com/kimiis/UniMemory">>>> click here to see <<< </a></div>
+                <img src="assets/portfolio/fondsPortfolio2.png" class="d-block w-100" alt="...">
+
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>A project full HTML/CSS/JAVASCRIPT </h5>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="carousel-text">
+                    <p> Bidhub</p>
+                </div>
+                <div class="link"><a href="https://github.com/kimiis/Enchere">>>> click here to see <<< </a></div>
+                <img src="assets/portfolio/fondsPortfolio3.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>A project in SpringBoot/ SQL</h5>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="carousel-text">
+                    <p> Filmotheque</p>
+                </div>
+                <div class="link"><a href="https://github.com/kimiis/filmotheque">>>> click here to see <<< </a></div>
+                <img src="assets/portfolio/fondsPortfolio4.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>A project in SpringBoot</h5>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="carousel-text">
+                    <p> HappEvent</p>
+                </div>
+                <div class="link"><a href="https://github.com/kimiis/Event">>>> click here to see <<< </a></div>
+                <img src="assets/portfolio/fondsPortfolio5.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>A project in Symfony/SQL</h5>
+                </div>
+            </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<div id="aboutme">
+    <!-- Contenu de la section About me -->
+    <img class="photoAboutMe" src="assets/aboutMe/fondAboutMe.png" alt="picture of me remixed by ai">
+    <img class="photo3" src="assets/aboutMe/logo8.png" alt="picture of me remixed by ai">
+    <div class="card3"></div>
+    <H5 class="titleAboutMe">WHO AM I ?</H5>
+
+    <p class="par1Aboutme">I am Kim Isabelle and I am looking for an apprenticeship as a web developer at the
+        Bachelor's/Master's level.
+        <br>
+        I have always been drawn to fields that have an affinity for art. Creativity is something
+        that prevails in my
+        hobbies: drawing, sewing, crafting, cake design, etc. </p>
+
+    <p class="par2Aboutme">I also engage in weightlifting because it is important to pursue physical activities,
+        especially when engaged in
+        sedentary professions.
+        <br>
+        <br>
+        Additionally, I grew up with video games and still enjoy them to this day.</p>
+
+</div>
+
+<div id="contact">
+    <!-- Contenu de la section Contact -->
+    <img class="photoContact" src="assets/contact/fondContact.jpg" alt="picture of me remixed by ai">
+
+    <div class="card4"></div>
+    <H5 class="titleContact">Contact me</H5>
+    <a href="https://www.linkedin.com/in/isabelle-kim-6ab129235">
+        <img class="logolinkedin" src="assets/contact/linkedin.png" alt="logo redirecting to my LinkedIn">
+    </a>
+
+    <a href="mailto:kimi.0208@outlook.fr">
+        <img class="logoMail" src="assets/contact/mail.png" alt="logo with my personal mail">
+    </a>
+</div>
+<a href="#" id="scrollToTopButton" title="Go to top"><img src="assets/arrow.png" alt="arrow up"></a>
+
+</body>
+</html>

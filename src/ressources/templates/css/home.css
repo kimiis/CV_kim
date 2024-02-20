@@ -1,0 +1,674 @@
+.photoHome {
+    width: 100%;
+    display: flex;
+    margin: -1rem auto auto auto;
+}
+
+.card1 {
+    width: 200px;
+    height: 200px;
+    background-color: rgba(244, 231, 251, 0.11);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 100px;
+    left: 48%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    z-index: 1;
+}
+
+img {
+    width: 2rem;
+}
+
+.photo1 {
+    width: 30rem;
+    border-radius: 1rem;
+    position: absolute;
+    top: 15rem;
+    left: 48%; /* Positionne l'image au milieu horizontalement */
+    transform: translateX(10%); /* Corrige la position pour centrer l'image */
+}
+
+#scrollToTopButton {
+    display: none; /* Initialement masqué */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+#scrollToTopButton img {
+    width: 5rem;
+    height: 5rem;
+    position: fixed;
+    right: -0.1rem;
+    bottom: 0;
+    transform: rotate(90deg);
+}
+
+
+/*----------------------Menu --------*/
+.menu-toggler {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: block;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.menu-toggler:hover + label,
+.menu-toggler:hover + label:before,
+.menu-toggler:hover + label:after {
+    background: white;
+}
+
+.menu-toggler:checked + label {
+    background: transparent;
+}
+
+.menu-toggler:checked + label:before,
+.menu-toggler:checked + label:after {
+    top: 0;
+    width: 40px;
+    transform-origin: 50% 50%;
+}
+
+.menu-toggler:checked + label:before {
+    transform: rotate(45deg) translateY(0px) translateX(0px);
+}
+
+.menu-toggler:checked + label:after {
+    transform: rotate(-45deg);
+}
+
+.menu-toggler:checked ~ ul .menu-item {
+    opacity: 1;
+}
+
+.menu-toggler:checked ~ ul .menu-item:nth-child(1) {
+    transform: rotate(0deg) translate(-200px);
+}
+
+.menu-toggler:checked ~ ul .menu-item:nth-child(2) {
+    transform: rotate(25deg) translateX(-200px);
+}
+
+.menu-toggler:checked ~ ul .menu-item:nth-child(3) {
+    transform: rotate(-25deg) translateX(-200px);
+}
+
+.menu-toggler:checked ~ ul .menu-item:nth-child(4) {
+    transform: rotate(-50deg) translateX(-200px);
+}
+
+.menu-toggler:checked ~ ul .menu-item:nth-child(5) {
+    transform: rotate(-75deg) translateX(-200px);
+}
+
+.menu-toggler:checked ~ ul .menu-item:nth-child(6) {
+    transform: rotate(-100deg) translateX(-200px);
+}
+
+.menu-toggler:checked ~ ul .menu-item:nth-child(7) {
+    transform: rotate(-125deg) translateX(-200px);
+}
+
+.menu-toggler:checked ~ ul .menu-item a {
+    pointer-events: auto;
+}
+
+.menu-toggler + label {
+    width: 40px;
+    height: 5px;
+    display: block;
+    z-index: 1;
+    border-radius: 2.5px;
+    background: #f4e7fb;
+    transition: transform 0.5s top 0.5s;
+    position: absolute;
+    display: block;
+    top: -750px;
+    bottom: 0;
+    left: 0;
+    right: -1700px;
+    margin: auto;
+}
+
+.menu-toggler + label:before,
+.menu-toggler + label:after {
+    width: 40px;
+    height: 5px;
+    display: block;
+    z-index: 1;
+    border-radius: 2.5px;
+    background: #f4e7fb;
+    transition: transform 0.5s top 0.5s;
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+}
+
+.menu-toggler + label:before {
+    top: 10px;
+}
+
+.menu-toggler + label:after {
+    top: -10px;
+}
+
+/*portefolio*/
+.menu-item:nth-child(1) a {
+    transform: rotate(0deg);
+}
+
+/*skills*/
+.menu-item:nth-child(2) a {
+    transform: rotate(-25deg);
+}
+
+/*jeu*/
+.menu-item:nth-child(3) a {
+    transform: rotate(25deg);
+}
+
+/*github*/
+.menu-item:nth-child(4) a {
+    transform: rotate(50deg);
+}
+
+/*about me*/
+.menu-item:nth-child(5) a {
+    transform: rotate(75deg);
+}
+
+.menu-item:nth-child(6) a {
+    transform: rotate(100deg);
+}
+
+.menu-item:nth-child(7) a {
+    transform: rotate(125deg);
+}
+
+.menu-item {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 600px;
+    left: 1500px;
+    right: 0;
+    margin: auto;
+    width: 80px;
+    height: 80px;
+    opacity: 0;
+    transition: 0.5s;
+}
+/*icon interieur du menu*/
+.menu-item a {
+    display: block;
+    width: inherit;
+    height: inherit;
+    line-height: 65px;
+    color: #f4e7fb;
+    background: #f4e7fb;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 40px;
+    pointer-events: none;
+    transition: 0.2s;
+}
+
+.menu-item a:hover {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+    color: #f4e7fb;;
+    background: #f4e7fb;;
+    font-size: 44.44px;
+}
+
+.picto-item {
+    position: relative; /*les .picto-item deviennent référents*/
+    cursor: help;
+    border-radius: 50%;
+}
+
+/* on génère un élément :after lors du survol et du focus :*/
+
+.picto-menu:hover:after,
+.picto-menu:focus:after {
+    content: attr(aria-label); /* on affiche aria-label */
+    position: absolute;
+    top: -2.4em;
+    left: -50%;
+    transform: translateX(-50%); /* on centre horizontalement  */
+    z-index: 1; /* pour s'afficher au dessus des éléments en position relative */
+    white-space: nowrap; /* on interdit le retour à la ligne*/
+    padding: 5px 14px;
+    background: #d5ab9c;
+    color: #000000;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* on génère un second élément en :before pour la flèche */
+
+[aria-label]:hover:before,
+[aria-label]:focus:before {
+    content: "▼";
+    position: absolute;
+    top: -1em;
+    left: 50%;
+    transform: translateX(-50%); /* on centre horizontalement  */
+    font-size: 20px;
+    color: #413219;
+}
+
+/* pas de contour durant le :focus */
+[aria-label]:focus {
+    outline: none;
+}
+
+/*--------------------------------Partie text intro------------------------*/
+
+.intro {
+    width: 43rem;
+    overflow: hidden; /* Empêche le texte de déborder s'il est plus long que la largeur de la boîte */
+    margin: 15rem 1rem 1rem 13rem; /*top right bottom left */
+    position: absolute; /* Position absolue pour positionner les paragraphes */
+    top: 20%; /* Positionner le haut des paragraphes à 50% du haut de leur conteneur parent */
+    left: 20%; /* Positionner la gauche des paragraphes à 50% du côté gauche de leur conteneur parent */
+    transform: translate(-50%, -50%); /* Centrer les paragraphes horizontalement et verticalement */
+    z-index: 1; /* S'assurer que les paragraphes se trouvent au-dessus de l'image */
+}
+
+.helloWorld {
+    color: #f4e7fb;
+    font-size: 8rem;
+    text-align: left;
+    margin: auto;
+    font-family: "bebas neue", sans-serif;
+}
+
+.text_intro {
+    color: #f4e7fb;
+    font-size: 2rem;
+    text-align: left;
+    margin: auto auto 1.5rem auto;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+.text_intro2 {
+    color: #f4e7fb;
+    font-size: 2rem;
+    text-align: left;
+    margin: auto;
+    font-family: "Montserrat", sans-serif;
+}
+
+/*-------------------------------Partie skills----------------------------*/
+#skills {
+    position: relative; /* Positionnement relatif pour que les éléments enfants soient positionnés par rapport à lui */
+}
+
+.photoSkills {
+    width: 98%;
+    border-radius: 1rem;
+    position: absolute;
+    left: 1rem;
+}
+
+/*fond vierge*/
+.photoSkills2 {
+    width: 100%;
+
+}
+
+.allTextSkills {
+    width: 80%;
+    overflow: hidden; /* Empêche le texte de déborder s'il est plus long que la largeur de la boîte */
+    margin: 15rem 1rem 1rem 13rem; /*top right bottom left */
+    position: absolute; /* Position absolue pour positionner les paragraphes */
+    top: 10%; /* Positionner le haut des paragraphes à 50% du haut de leur conteneur parent */
+    left: 40%; /* Positionner la gauche des paragraphes à 50% du côté gauche de leur conteneur parent */
+    transform: translate(-50%, -50%); /* Centrer les paragraphes horizontalement et verticalement */
+    z-index: 1; /* S'assurer que les paragraphes se trouvent au-dessus de l'image */
+}
+
+.textSkills {
+    color: #BBACAC;
+    font-size: 8rem;
+    text-align: left;
+    font-family: "bebas neue", sans-serif;
+    width: 30rem;
+}
+
+
+#image-track {
+    height: 100vh;
+    display: flex;
+    gap: 2vmin;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+}
+
+#image-track > .frame {
+    width: 8rem;
+    height: 20rem;
+    object-fit: cover;
+    object-position: 50% 50%;
+    transition: all 1s;
+    /*translate: (-50%, -50%);*/
+    filter: brightness(45%);
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: grid;
+    grid-template-rows: auto 20%;
+    overflow: hidden;
+}
+
+#image-track > .frame:hover {
+    width: 40vmin;
+    height: 30vmin;
+    filter: brightness(100%);
+}
+
+#image-track > .frame > .image {
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+#image-track > .frame > .header {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5vmin;
+    position: relative;
+    left: 10vmin;
+    top: 2vmin;
+    transition: all 1s;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    color: #ffffff00;
+    text-wrap: nowrap;
+}
+
+#image-track > .frame:hover > .header {
+    left: 2vmin;
+    color: #ffffff;
+    text-shadow: 0 0 1rem #000, 0 0 1rem #000, 0 0 1rem #000;
+}
+
+#image-track > .frame > .textbox {
+    background-color: #14141400;
+    transition: all 1s;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    display: flex;
+    width: 90%;
+    height: fit-content;
+    padding-top: 2vmin;
+    padding-bottom: 2vmin;
+    margin-top: 2vmin;
+    margin-bottom: 2vmin;
+    box-sizing: border-box;
+    max-height: 90%;
+    justify-self: center;
+    align-self: end;
+}
+
+#image-track > .frame:hover > .textbox {
+    background-color: #141414c0;
+}
+
+#image-track > .frame > .textbox > .subheader {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5vmin;
+    position: relative;
+    left: 10vmin;
+    transition: all 1s;
+    color: #ffffff00;
+    text-wrap: nowrap;
+    align-self: end;
+}
+
+#image-track > .frame:hover > .textbox > .subheader {
+    left: 2vmin;
+    color: #ffffff;
+    text-shadow: 0 0 1rem #000, 0 0 1rem #000, 0 0 1rem #000;
+}
+
+#skills {
+    position: relative; /* Positionnement relatif pour que les éléments enfants soient positionnés par rapport à lui */
+}
+
+.photoSkills {
+    width: 98%;
+    border-radius: 1rem;
+    position: absolute;
+    left: 1rem;
+}
+
+/*fond vierge*/
+.photoSkills2 {
+    width: 100%;
+
+}
+
+.card2 {
+    margin: auto;
+    width: 1400px;
+    height: 350px;
+    background-color: rgba(187, 172, 172, 0.72);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    z-index: 1;
+}
+
+.allTextSkills {
+    width: 80%;
+    overflow: hidden; /* Empêche le texte de déborder s'il est plus long que la largeur de la boîte */
+    margin: 15rem 1rem 1rem 13rem; /*top right bottom left */
+    position: absolute; /* Position absolue pour positionner les paragraphes */
+    top: 10%; /* Positionner le haut des paragraphes à 50% du haut de leur conteneur parent */
+    left: 40%; /* Positionner la gauche des paragraphes à 50% du côté gauche de leur conteneur parent */
+    transform: translate(-50%, -50%); /* Centrer les paragraphes horizontalement et verticalement */
+    z-index: 1; /* S'assurer que les paragraphes se trouvent au-dessus de l'image */
+}
+
+.textSkills {
+    color: #BBACAC;
+    font-size: 8rem;
+    text-align: left;
+    font-family: "bebas neue", sans-serif;
+    width: 30rem;
+}
+
+/*-------------------------------Partie Portefolio-------------------------------*/
+.carousel-item .link a {
+    text-decoration: none;
+    color: #f4e7fb;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: "bebas neue", sans-serif;
+    width: 100rem;
+}
+
+.carousel-item .carousel-text p {
+    color: #f4e7fb;
+}
+
+.carousel-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #f4e7fb;
+    font-family: "bebas neue", sans-serif;
+    font-size: 7rem;
+    width: 100rem;
+}
+/*-----------------------------------Partie About me------------------------------------*/
+#aboutme{
+    position: relative; /* Positionnement relatif pour que les éléments enfants soient positionnés par rapport à lui */
+}
+/*fond ecran*/
+.photoAboutMe {
+    width: 100%;
+    display: flex;
+    margin: -1rem auto auto auto;
+}
+
+.card3 {
+    width: 200px;
+    height: 200px;
+    background-color: rgba(244, 231, 251, 0.11);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 15rem;
+    left: 43%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    z-index: 1;
+}
+/*!*miniature*!*/
+.photo3 {
+    width: 30rem;
+    border-radius: 1rem;
+    position: absolute;
+    top: 15rem;
+    left: 15%; /* Positionne l'image au milieu horizontalement */
+    transform: translateX(10%); /* Corrige la position pour centrer l'image */
+}
+.titleAboutMe{
+    position: absolute;
+    font-family: "bebas neue", sans-serif;
+    color: #f4e7fb;
+    font-size: 10rem;
+    top: 8rem;
+    left: 53%; /* Positionne l'image au milieu horizontalement */
+    transform: translateX(10%); /* Corrige la position pour centrer l'image */
+}
+.par1Aboutme{
+    position: absolute;
+    font-family: "Montserrat", sans-serif;
+    color: #f4e7fb;
+    font-size: 2rem;
+    top: 20rem;
+    left: 40%; /* Positionne l'image au milieu horizontalement */
+    transform: translateX(10%); /* Corrige la position pour centrer l'image */
+    width: 60rem;
+}
+.par2Aboutme{
+    position: absolute;
+    font-family: "Montserrat", sans-serif;
+    color: #f4e7fb;
+    font-size: 2rem;
+    top: 40rem;
+    left: 45%; /* Positionne l'image au milieu horizontalement */
+    transform: translateX(10%); /* Corrige la position pour centrer l'image */
+    width: 60rem;
+}
+
+/*-------------------------------Contact me-----------------------------*/
+
+#contact{
+    position: relative; /* Positionnement relatif pour que les éléments enfants soient positionnés par rapport à lui */
+}
+
+.photoContact {
+    width: 100%;
+    display: flex;
+    margin: -1rem auto auto auto;
+}
+
+.card4 {
+    width: 1400px;
+    height: 200px;
+    background-color: rgba(244, 231, 251, 0.11);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    z-index: 1;
+}
+.titleContact{
+    position: absolute;
+    font-family: "bebas neue", sans-serif;
+    color: #f4e7fb;
+    font-size: 10rem;
+    top: 47rem;
+    left: 15%; /* Positionne l'image au milieu horizontalement */
+    transform: translateX(10%); /* Corrige la position pour centrer l'image */
+    z-index: 10;
+}
+
+.logolinkedin{
+    position: absolute;
+    width: 25rem;
+    top: 40.5rem;
+    left: 60%; /* Positionne l'image au milieu horizontalement */
+    transform: translateX(10%); /* Corrige la position pour centrer l'image */
+    z-index: 10;
+}
+
+.logoMail{
+    position: absolute;
+    width: 25rem;
+    top: 39rem;
+    left: 48%; /* Positionne l'image au milieu horizontalement */
+    transform: translateX(10%); /* Corrige la position pour centrer l'image */
+    z-index: 10;
+}
