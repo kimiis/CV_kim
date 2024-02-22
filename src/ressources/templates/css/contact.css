@@ -163,7 +163,7 @@ img {
     height: 80px;
     opacity: 0;
     transition: 0.5s;
-    z-index: 10;
+    z-index: 11;
 }
 /*icon interieur du menu*/
 .menu-item a {
@@ -243,28 +243,90 @@ img {
     margin: -1rem auto auto auto;
 }
 
-.card4 {
-    width: 1400px;
+.photoProfilContact{
+    position: absolute;
+    border-radius: 2rem;
+    width: 30rem;
+    top: 10rem;
+    left: 10rem;
+    z-index: 2;
+}
+/*little card white*/
+.card5{
+    width: 200px;
     height: 200px;
-    background-color: rgba(244, 231, 251, 0.11);
+    bottom: 22rem;
+    left: 33%;
+
+    background-color: rgba(255,255,255,0.68);
     backdrop-filter: blur(10px);
     border-radius: 10px;
     position: absolute;
-    bottom: 8rem;
-    left: 50%;
     transform: translateX(-50%);
     display: flex;
     justify-content: center; /* Centrer horizontalement */
     align-items: center; /* Centrer verticalement */
-    z-index: 1;
+    z-index: 2;
+}
+/*little card with logo*/
+.card6{
+    width: 500px;
+    height: 300px;
+    bottom: 18rem;
+    left: 70%;
+
+    background-color: rgba(255,255,255,0.68);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    position: absolute;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    z-index: 2;
+}
+/*images*/
+.card7{
+border-radius: 2rem;
+    width: 10rem;
+    position: absolute;
+    bottom: 18rem;
+    left:22%;
+    z-index: 2;
+}
+
+.card8{
+    border-radius: 2rem;
+    width: 10rem;
+    position: absolute;
+    bottom: 33rem;
+    left:35%;
+    z-index: 2;
+}
+/*big card*/
+.card4 {
+    width: 1800px;
+    height: 1000px;
+    bottom: 2rem;
+    left: 50%;
+
+    background-color: rgba(244, 231, 251, 0.11);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    position: absolute;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    /*z-index: 1;*/
 }
 .titleContact{
     position: absolute;
     font-family: "bebas neue", sans-serif;
     color: #f4e7fb;
     font-size: 10rem;
-    top: 47rem;
-    left: 15%; /* Positionne l'image au milieu horizontalement */
+    top: 18rem;
+    left: 51%; /* Positionne l'image au milieu horizontalement */
     transform: translateX(10%); /* Corrige la position pour centrer l'image */
     z-index: 10;
 }
@@ -272,8 +334,8 @@ img {
 .logolinkedin{
     position: absolute;
     width: 25rem;
-    top: 40.5rem;
-    left: 60%; /* Positionne l'image au milieu horizontalement */
+    top: 27rem;
+    left: 62%;
     transform: translateX(10%); /* Corrige la position pour centrer l'image */
     z-index: 10;
 }
@@ -281,8 +343,8 @@ img {
 .logoMail{
     position: absolute;
     width: 25rem;
-    top: 39rem;
-    left: 48%; /* Positionne l'image au milieu horizontalement */
-    transform: translateX(10%); /* Corrige la position pour centrer l'image */
+    top: 25.7rem;
+    left: 52%;
+    transform: translateX(10%);
     z-index: 10;
 }
