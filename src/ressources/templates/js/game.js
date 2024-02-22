@@ -13,22 +13,13 @@ const background = new Sprite({
         x: 0,
         y: 0
     },
-    imageSrc: './assets/game/background.png'
+    imageSrc: './assets/game/fondSakura.png'
 })
 
-const shop = new Sprite({
-    position: {
-        x: 600,
-        y: 128
-    },
-    imageSrc: './assets/game/shop.png',
-    scale: 2.75,
-    framesMax: 6
-})
 
 const player = new Fighter({
     position: {
-        x: 0,
+        x: 200,
         y: 0
     },
     velocity: {
@@ -88,7 +79,7 @@ const player = new Fighter({
 
 const enemy = new Fighter({
     position: {
-        x: 400,
+        x: 800,
         y: 100
     },
     velocity: {
@@ -171,7 +162,7 @@ function animate() {
     c.fillStyle = 'black'
     c.fillRect(0, 0, canvas.width, canvas.height)
     background.update()
-    shop.update()
+
     c.fillStyle = 'rgba(255, 255, 255, 0.15)'
     c.fillRect(0, 0, canvas.width, canvas.height)
     player.update()
@@ -330,3 +321,80 @@ window.addEventListener('keyup', (event) => {
             break
     }
 })
+
+function resetGame() {
+    // si le joueur 2 gagne (kenji)
+    // player = samourai
+
+    if(!player.dead){
+        // Réinitialisation du joueur
+        player.position.x = 200;
+        player.position.y = 0;
+        player.velocity.x = 0;
+        player.velocity.y = 0;
+        player.health = 100;
+        player.dead = false;
+        player.isAttacking = false;
+        player.image.src = './assets/game/samourai/Idle.png'; // Réinitialisation de l'image
+
+        // Réinitialisation de l'ennemi
+        enemy.position.x = 800;
+        enemy.position.y = 0;
+        enemy.velocity.x = 0;
+        enemy.velocity.y = 0;
+        enemy.health = 100;
+        enemy.dead = false;
+        enemy.isAttacking = false;
+        enemy.image.src = './assets/game/Warrior/Idle.png'; // Réinitialisation de l'image
+
+
+        // Réinitialisation des barres de vie
+        gsap.to('#playerHealth', { width: '100%' });
+        gsap.to('#enemyHealth', { width: '100%' });
+
+        // // Réinitialisation des touches
+        // keys.q.pressed = false;
+        // keys.d.pressed = false;
+        // keys.ArrowLeft.pressed = false;
+        // keys.ArrowRight.pressed = false;
+
+    } else {
+        // Réinitialisation du joueur
+        player.position.x = 0;
+        player.position.y = 0;
+        player.velocity.x = 0;
+        player.velocity.y = 0;
+        player.health = 100;
+        player.dead = false;
+        player.isAttacking = false;
+        player.image.src = './assets/game/samourai/Idle.png'; // Réinitialisation de l'image
+
+        // Réinitialisation de l'ennemi
+        enemy.position.x = 500;
+        enemy.position.y = 100;
+        enemy.velocity.x = 0;
+        enemy.velocity.y = 0;
+        enemy.health = 100;
+        enemy.dead = false;
+        enemy.isAttacking = false;
+        enemy.image.src = './assets/game/Warrior/Idle.png'; // Réinitialisation de l'image
+
+
+        // Réinitialisation des barres de vie
+        gsap.to('#playerHealth', { width: '100%' });
+        gsap.to('#enemyHealth', { width: '100%' });
+
+        // Réinitialisation des touches
+        keys.q.pressed = false;
+        keys.d.pressed = false;
+        keys.ArrowLeft.pressed = false;
+        keys.ArrowRight.pressed = false;
+    }
+
+}
+
+window.addEventListener('keydown', (event) => {
+    if (event.key === 'r') { // Par exemple, l'utilisateur peut appuyer sur la touche 'r' pour recommencer
+        resetGame(); // Appelez la fonction de réinitialisation du jeu
+    }
+});

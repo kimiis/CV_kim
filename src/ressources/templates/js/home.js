@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('mouseup', () => {
         track.dataset.mouseDownAt = "0";
         track.dataset.prevPercentage = track.dataset.percentage;
+
     });
 
     window.addEventListener('mousemove', e => {

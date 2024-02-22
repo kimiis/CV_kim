@@ -229,7 +229,7 @@ img {
     height: inherit;
     line-height: 65px;
     color: #f4e7fb;
-    background: #f4e7fb;
+    background: rgba(227,170,221,0.77);
     border-radius: 50%;
     text-align: center;
     text-decoration: none;
@@ -241,7 +241,7 @@ img {
 .menu-item a:hover {
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
     color: #f4e7fb;;
-    background: #f4e7fb;;
+    background: rgba(227,170,221,0.77);
     font-size: 44.44px;
 }
 
@@ -263,7 +263,7 @@ img {
     z-index: 1; /* pour s'afficher au dessus des éléments en position relative */
     white-space: nowrap; /* on interdit le retour à la ligne*/
     padding: 5px 14px;
-    background: #d5ab9c;
+    background: rgba(244,231,251,0.77);
     color: #000000;
     border-radius: 4px;
     font-size: 1.2rem;
@@ -336,6 +336,7 @@ img {
     border-radius: 1rem;
     position: absolute;
     left: 1rem;
+    top:0.7rem;
 }
 
 /*fond vierge*/
@@ -356,7 +357,7 @@ img {
 }
 
 .textSkills {
-    color: #BBACAC;
+    color: #095228;
     font-size: 8rem;
     text-align: left;
     font-family: "bebas neue", sans-serif;
@@ -421,6 +422,7 @@ img {
     grid-column-end: 2;
     color: #ffffff00;
     text-wrap: nowrap;
+    z-index: 2;
 }
 
 #image-track > .frame:hover > .header {
@@ -474,18 +476,6 @@ img {
     position: relative; /* Positionnement relatif pour que les éléments enfants soient positionnés par rapport à lui */
 }
 
-.photoSkills {
-    width: 98%;
-    border-radius: 1rem;
-    position: absolute;
-    left: 1rem;
-}
-
-/*fond vierge*/
-.photoSkills2 {
-    width: 100%;
-
-}
 
 .card2 {
     margin: auto;
@@ -495,7 +485,7 @@ img {
     backdrop-filter: blur(10px);
     border-radius: 10px;
     position: absolute;
-    bottom: 5rem;
+    bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -504,23 +494,129 @@ img {
     z-index: 1;
 }
 
-.allTextSkills {
-    width: 80%;
-    overflow: hidden; /* Empêche le texte de déborder s'il est plus long que la largeur de la boîte */
-    margin: 15rem 1rem 1rem 13rem; /*top right bottom left */
-    position: absolute; /* Position absolue pour positionner les paragraphes */
-    top: 10%; /* Positionner le haut des paragraphes à 50% du haut de leur conteneur parent */
-    left: 40%; /* Positionner la gauche des paragraphes à 50% du côté gauche de leur conteneur parent */
-    transform: translate(-50%, -50%); /* Centrer les paragraphes horizontalement et verticalement */
-    z-index: 1; /* S'assurer que les paragraphes se trouvent au-dessus de l'image */
+
+ul.skills {
+    width: 100%;
+    position: relative;
+    padding: 25px 35px;
+    background: linear-gradient(
+            0deg,
+            var(--c1) 0 10px,
+            var(--b2) 0 calc(100% - 10px),
+            var(--c1) 0 100%
+    );
 }
 
-.textSkills {
-    color: #BBACAC;
-    font-size: 8rem;
-    text-align: left;
-    font-family: "bebas neue", sans-serif;
-    width: 30rem;
+/*texte des jauges*/
+ul.skills li {
+
+    --per: 50;
+    --dur: calc(calc(var(--per) / 100) * 1.5s);
+    margin: 0 0 5px 0;
+    list-style: none;
+    padding: 20px 0;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: #f4e7fb;
+    top:90px;
+    width: 90px;
+}
+
+ul.skills li:before {
+    content: "";
+    position: absolute;
+    background: #1c1c1c;
+    height: 16px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    border-radius: 2px;
+    border: 1px solid #111;
+    border-color: #111 #323232 #323232 #111;
+    --track: #2292dd40;
+    background: linear-gradient(
+            90deg,
+            var(--track) calc(calc(var(--per) * 1%) + 4px),
+            #1c1c1c calc(calc(var(--per) * 1%) + 4px)
+    );
+}
+
+/*jauge*/
+ul.skills li:after {
+    content: "";
+    height: 11px;
+    margin: 0 0 2px 0;
+    background: pink;
+    position: absolute;
+    box-shadow: 0px 0px 10px 1px #00c6ff66;
+    left: 3px;
+    width: 0%;
+    bottom: 0;
+    transition: all var(--dur) ease 0s;
+    animation: start 1s ease 0s 2 alternate;
+}
+
+/*Remplissage de la jauge*/
+ul.skills:hover li:after,
+label:hover + ul.skills li:after,
+input:checked + label + ul.skills li:after {
+    width: calc(calc(var(--per) * 1%) - 2px);
+}
+
+/*arriere plan jauge et chiffre*/
+ul.skills li span:before {
+    position: absolute;
+    right: -25px;
+    top: 43px;
+    transition: var(--t1);
+    content: "";
+    opacity: 1;
+    border: 7px solid #fff0;
+}
+
+/*chiffres jauges*/
+ul.skills li span:after {
+
+    position: absolute;
+    right: -40px;
+    top: 38px;
+    transition: var(--t1);
+    counter-reset: percent var(--per);
+    /*content: counter(percent) "%";*/
+    content: counter(percent);
+    color: #f4e7fb;
+    opacity: 1 !important;
+    padding: 4px 6px;
+    border-radius: 1px;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+.frame {
+    position: relative;
+    display: inline-block;
+}
+
+.frame .image {
+    position: relative;
+    z-index: 1;
+}
+
+.frame .skills {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.frame:hover .skills {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 2;
 }
 
 /*-------------------------------Partie Portefolio-------------------------------*/
@@ -551,124 +647,4 @@ img {
     font-family: "bebas neue", sans-serif;
     font-size: 7rem;
     width: 100rem;
-}
-/*-----------------------------------Partie About me------------------------------------*/
-#aboutme{
-    position: relative; /* Positionnement relatif pour que les éléments enfants soient positionnés par rapport à lui */
-}
-/*fond ecran*/
-.photoAboutMe {
-    width: 100%;
-    display: flex;
-    margin: -1rem auto auto auto;
-}
-
-.card3 {
-    width: 200px;
-    height: 200px;
-    background-color: rgba(244, 231, 251, 0.11);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    position: absolute;
-    bottom: 15rem;
-    left: 43%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center; /* Centrer horizontalement */
-    align-items: center; /* Centrer verticalement */
-    z-index: 1;
-}
-/*!*miniature*!*/
-.photo3 {
-    width: 30rem;
-    border-radius: 1rem;
-    position: absolute;
-    top: 15rem;
-    left: 15%; /* Positionne l'image au milieu horizontalement */
-    transform: translateX(10%); /* Corrige la position pour centrer l'image */
-}
-.titleAboutMe{
-    position: absolute;
-    font-family: "bebas neue", sans-serif;
-    color: #f4e7fb;
-    font-size: 10rem;
-    top: 8rem;
-    left: 53%; /* Positionne l'image au milieu horizontalement */
-    transform: translateX(10%); /* Corrige la position pour centrer l'image */
-}
-.par1Aboutme{
-    position: absolute;
-    font-family: "Montserrat", sans-serif;
-    color: #f4e7fb;
-    font-size: 2rem;
-    top: 20rem;
-    left: 40%; /* Positionne l'image au milieu horizontalement */
-    transform: translateX(10%); /* Corrige la position pour centrer l'image */
-    width: 60rem;
-}
-.par2Aboutme{
-    position: absolute;
-    font-family: "Montserrat", sans-serif;
-    color: #f4e7fb;
-    font-size: 2rem;
-    top: 40rem;
-    left: 45%; /* Positionne l'image au milieu horizontalement */
-    transform: translateX(10%); /* Corrige la position pour centrer l'image */
-    width: 60rem;
-}
-
-/*-------------------------------Contact me-----------------------------*/
-
-#contact{
-    position: relative; /* Positionnement relatif pour que les éléments enfants soient positionnés par rapport à lui */
-}
-
-.photoContact {
-    width: 100%;
-    display: flex;
-    margin: -1rem auto auto auto;
-}
-
-.card4 {
-    width: 1400px;
-    height: 200px;
-    background-color: rgba(244, 231, 251, 0.11);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    position: absolute;
-    bottom: 8rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center; /* Centrer horizontalement */
-    align-items: center; /* Centrer verticalement */
-    z-index: 1;
-}
-.titleContact{
-    position: absolute;
-    font-family: "bebas neue", sans-serif;
-    color: #f4e7fb;
-    font-size: 10rem;
-    top: 47rem;
-    left: 15%; /* Positionne l'image au milieu horizontalement */
-    transform: translateX(10%); /* Corrige la position pour centrer l'image */
-    z-index: 10;
-}
-
-.logolinkedin{
-    position: absolute;
-    width: 25rem;
-    top: 40.5rem;
-    left: 60%; /* Positionne l'image au milieu horizontalement */
-    transform: translateX(10%); /* Corrige la position pour centrer l'image */
-    z-index: 10;
-}
-
-.logoMail{
-    position: absolute;
-    width: 25rem;
-    top: 39rem;
-    left: 48%; /* Positionne l'image au milieu horizontalement */
-    transform: translateX(10%); /* Corrige la position pour centrer l'image */
-    z-index: 10;
 }
